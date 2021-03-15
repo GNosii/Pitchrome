@@ -8,10 +8,14 @@ Get the latest release from [here](https://github.com/GNosii/Pitchrome/releases/
 
 ## 🌎 Compatibility guide
 
-|Browser|Compatibility|Notes|
-|-|-|-|
-|Google Chrome|✔️Tested|Completely compatible|
-|Microsoft Edge|✔️Tested|Completely compatible|
-|Opera|⚠️Untested||
-|Brave|⚠️Untested||
-|Firefox|✔️Tested|Compatible if using `Pitchrome-Firefox`|
+|Developer|Browser|Compatibility|💬|
+|-|-|-|-|
+|Google|Chrome|✔️Tested|Completely compatible|
+|Google|Chromium|❓Untested|Compatibility hasn't been tested but might be possible|
+|Microsoft|Edge|✔️Tested|Completely compatible|
+|Mozilla|Firefox|✔️Tested|Compatible if using `Pitchrome-Firefox`|
+|Opera Software|Opera|❓Untested|Compatibility hasn't been tested|
+|Opera Software|Opera GX|❓Untested|Compatibility hasn't been tested|
+|Brave Software|Brave|❓Untested|Compatibility hasn't been tested|
+|Apple|Safari|❓Untested|Compatibility hasn't been tested|
+|Microsoft|Internet Explorer|❌Unsupported||
