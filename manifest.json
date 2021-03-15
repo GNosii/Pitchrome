@@ -1,0 +1,20 @@
+{
+    "name": "Pitchrome",
+    "description": "Extension allowing you to easily change the pitch in YouTube videos.",
+    "version": "1.0",
+    "manifest_version": 3,
+
+    "content_scripts": [
+        {
+          "matches": ["*://www.youtube.com/*"],
+          "js": ["/background/YTBackground.js"]
+        }
+    ],
+
+    "action": {
+        "default_popup": "popup/Popup.html",
+        "default_icon": "matdesign_earbuds.png"
+    },
+
+    "permissions": ["activeTab"]
+}
