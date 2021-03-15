@@ -12,4 +12,4 @@ Get the latest release from [here](https://github.com/GNosii/Pitchrome/releases/
 |Microsoft Edge|✔️Tested|Completely compatible|
 |Opera|⚠️Untested||
 |Brave|⚠️Untested||
-|Firefox|⚠️Untested|Compatibility unknown, although the background script may work|
+|Firefox|⚠️Unknown|The extension itself is valid, yet the manifest cannot be understood by Firefox|
