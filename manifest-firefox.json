@@ -2,7 +2,7 @@
     "name": "__MSG_extensionname__",
     "description": "__MSG_extensiondescription__",
     "version": "1.0",
-    "manifest_version": 3,
+    "manifest_version": 2,
 
     "default_locale": "es",
 
@@ -13,7 +13,7 @@
         }
     ],
 
-    "action": {
+    "browser_action": {
         "default_popup": "popup/Popup.html",
         "default_title": "Pitchrome",
         "default_icon": {

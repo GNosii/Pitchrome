@@ -6,10 +6,15 @@ var ytTitleReplaceRegex = /\(\d[\d]?[+]?\)/;
 
 var isYoutube = true;
 var isError = false;
+var isFirefox = false;
+
+var isBrowserIdentified = false;
+
+var isShowingDebug = false;
 
 setupUI();
-listenToMouseClick();
 checkYoutube();
+listenToMouseClick();
 
 function setupUI() {
     chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
@@ -18,15 +23,25 @@ function setupUI() {
 
         if (!isError) {
             // TODO: En algún momento hacer que esto funcione con locale
-            document.getElementById("btn-up").textContent = "SUBIR";
-            document.getElementById("btn-down").textContent = "BAJAR";
-            document.getElementById("btn-reset").textContent = "RESETEAR";
-            
+            document.getElementById("btn-up").textContent = chrome.i18n.getMessage("buttonup");
+            document.getElementById("btn-down").textContent = chrome.i18n.getMessage("buttondown");
+            document.getElementById("btn-reset").textContent = chrome.i18n.getMessage("buttonreset");
+
             if (isYoutube) {
                 document.getElementById("yt-thumbnail").src = ytThumbnailBaseUrl.replace("$u", videoId);
                 document.getElementById("yt-title").textContent = videoTitle;
             }
         }
+
+        // Añadir texto a la pantalla de depuración
+        document.getElementById("debug-title").textContent = "Información de depuración";
+        document.getElementById("debug-isfirefox").textContent = "Modo Firefox: " + isFirefox;
+        document.getElementById("debug-useragent").textContent = "Agente de Usuario: " + navigator.userAgent;
+        document.getElementById("debug-version").textContent = "Versión: " + chrome.runtime.getManifest().version;
+        
+        // Añadirle texto al botón para evitar el problema de que si no se ha
+        // seleccionado una opción no se ve el texto
+        document.getElementById("btn-debug").textContent = chrome.i18n.getMessage("buttondebugshow");
 
         console.log("Locale and images ready!");
     });
@@ -35,28 +50,55 @@ function setupUI() {
 function listenToMouseClick() {
     console.log("Attempting event register for " + navigator.userAgent);
 
-    if (navigator.userAgent.indexOf("Chrome")) {
-        document.addEventListener("pointerdown", (event) => { handleClickEvent(event); });
-        console.log("Registered pointerdown event listener");
-    }
-
     if (navigator.userAgent.indexOf("Firefox")) {
         document.addEventListener("mouseup", (event) => { handleClickEvent(event); });
         console.log("Registered mouseup event listener");
+        isBrowserIdentified = true;
+        isFirefox = true;
     }
+
+    if (navigator.userAgent.indexOf("Chrome") && !isBrowserIdentified) {
+        document.addEventListener("pointerdown", (event) => { handleClickEvent(event); });
+        console.log("Registered pointerdown event listener");
+        isBrowserIdentified = true;
+    }
+
+    console.log("IsFirefox " + isFirefox);
 
     function handleClickEvent(event) {
         var clickedId = event.target.id 
 
         if (clickedId == "btn-up" || clickedId == "btn-down" || clickedId == "btn-reset") {
-            chrome.tabs.query({ active: true, currentWindow: true }).then(sendMessage).catch(reportException);
+            console.log("Clicked on " + clickedId);
+
+            chrome.tabs.query({ active: true, currentWindow: true }, sendMessage);
+        }
+
+        if (clickedId == "btn-debug") {
+            console.log("Clicked on debug button");
+
+            if (!isShowingDebug) {
+                document.getElementById("main-container").style = "display: none;";
+                document.getElementById("debug-container").style = "";
+
+                document.getElementById("btn-debug").textContent = chrome.i18n.getMessage("buttondebughide");
+
+                isShowingDebug = true;
+            } else {
+                document.getElementById("main-container").style = "";
+                document.getElementById("debug-container").style = "display: none;";
+
+                document.getElementById("btn-debug").textContent = chrome.i18n.getMessage("buttondebugshow");
+
+                isShowingDebug = false;
+            }
         }
 
         function sendMessage(tab) {
             var filtered = (event.target.id).replace("btn-", "");
             chrome.tabs.sendMessage(tab[0].id, {action: filtered});
 
-            console.log("Sent message: " + filtered);
+            console.log("Sent message to background script: " + filtered);
         }
 
         console.debug("Received click event from " + event.type);

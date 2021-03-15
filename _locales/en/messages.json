@@ -1,0 +1,29 @@
+{
+    "extensionname": {
+        "message": "Pitchrome"
+    },
+
+    "extensiondescription": {
+        "message": "Extension allowing you to easily change the pitch in YouTube videos."
+    },
+
+    "buttonup": {
+        "message": "UP"
+    },
+
+    "buttondown": {
+        "message": "DOWN"
+    },
+
+    "buttonreset": {
+        "message": "RESET"
+    },
+
+    "buttondebugshow": {
+        "message": "SHOW DEBUG"
+    },
+
+    "buttondebughide": {
+        "message": "HIDE DEBUG"
+    }
+}

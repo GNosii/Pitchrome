@@ -5,6 +5,7 @@ var video = document.querySelector("video");
 var speedManager;
 
 video.preservesPitch = false;
+video.mozPreservesPitch = video.preservesPitch;
 
 console.log("Injected background script!");
 
