@@ -17,5 +17,5 @@ Get the latest release from [here](https://github.com/GNosii/Pitchrome/releases/
 |Opera Software|Opera|❓Untested|Compatibility hasn't been tested|
 |Opera Software|Opera GX|❓Untested|Compatibility hasn't been tested|
 |Brave Software|Brave|❓Untested|Compatibility hasn't been tested|
-|Apple|Safari|❓Untested|Compatibility hasn't been tested|
+|Apple|Safari|❌Unsupported|Not supported currently|
 |Microsoft|Internet Explorer|❌Unsupported||
