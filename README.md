@@ -1,5 +1,8 @@
 # Pitchrome 
 
+![](https://img.shields.io/github/languages/code-size/gnosii/pitchrome?label=code%20size&style=flat-square)
+![](https://img.shields.io/github/languages/top/gnosii/pitchrome?style=flat-square)
+
 ## 💻 How to Install 
 
 Get the latest release from [here](https://github.com/GNosii/Pitchrome/releases/latest/)
