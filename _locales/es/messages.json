@@ -6,10 +6,6 @@
     "extensiondescription": {
         "message": "Extensión que te permite cambiar facilmente el pitch de los videos en YouTube."
     },
-
-    "extensionversion": {
-        "message": "1.2.0"
-    },
     
     "buttonup": {
         "message": "SUBIR"
@@ -29,5 +25,21 @@
 
     "buttondebughide": {
         "message": "OCULTAR DEBUG"
+    },
+
+    "debugtitle": {
+        "message": "Información de depuración"
+    },
+
+    "errortitle": {
+        "message": "Ocurrió un error"
+    },
+
+    "errordesc": {
+        "message": "Parece que se produjó un error. Reinicia la página y intentalo denuevo, si sigue pasando avisanos en GitHub."
+    },
+
+    "errorsubtitle": {
+        "message": "Información del error"
     }
 }

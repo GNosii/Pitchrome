@@ -16,30 +16,39 @@ setupUI();
 checkYoutube();
 listenToMouseClick();
 
-function setupUI() {
+function setupUI(exception) {
     chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
         var videoId = (tab[0].url).replace("https://www.youtube.com/watch?v=", "").split("&")[0];
         var videoTitle = (tab[0].title).replace(ytTitleReplaceRegex, "").replace(" - YouTube", "");
 
+    
         if (!isError) {
-            // TODO: En algún momento hacer que esto funcione con locale
             document.getElementById("btn-up").textContent = chrome.i18n.getMessage("buttonup");
             document.getElementById("btn-down").textContent = chrome.i18n.getMessage("buttondown");
             document.getElementById("btn-reset").textContent = chrome.i18n.getMessage("buttonreset");
-
+            
             if (isYoutube) {
                 document.getElementById("bkg-container").style.backgroundImage = "url('" + ytThumbnailBaseUrl.replace("$u", videoId); + "')";
-
                 document.getElementById("yt-title").textContent = videoTitle;
             }
+        } else {
+            document.getElementById("main-container").style = "display: none;";
+            document.getElementById("bkg-container").style = "display: none;";
+            document.getElementById("error-container").style = "";
+        
+            document.getElementById("error-title").textContent = chrome.i18n.getMessage("errortitle");
+            document.getElementById("error-desc").textContent = chrome.i18n.getMessage("errordesc");
+            document.getElementById("error-subtitle").textContent = chrome.i18n.getMessage("errorsubtitle");
+            document.getElementById("error-msg").textContent = exception.name + ": " + exception.message;
         }
 
         // Añadir texto a la pantalla de depuración
         document.getElementById("debug-title").textContent = "Información de depuración";
         document.getElementById("debug-isfirefox").textContent = "Modo Firefox: " + isFirefox;
+        document.getElementById("debug-iserror").textContent = "Modo manejo de error: " + isError;
         document.getElementById("debug-useragent").textContent = "Agente de Usuario: " + navigator.userAgent;
         document.getElementById("debug-version").textContent = "Versión: " + chrome.runtime.getManifest().version;
-        
+
         // Añadirle texto al botón para evitar el problema de que si no se ha
         // seleccionado una opción no se ve el texto
         document.getElementById("btn-debug").textContent = chrome.i18n.getMessage("buttondebugshow");
@@ -114,4 +123,6 @@ function checkYoutube() {
 function reportException(exception) {
     isError = true;
     console.log(exception);
+
+    setupUI(exception);
 }

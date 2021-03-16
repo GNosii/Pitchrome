@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-.bkg {
+.bkg, .container {
     width: 320px;
     height: 180px;
     z-index: 1;

@@ -7,10 +7,6 @@
         "message": "Extension allowing you to easily change the pitch in YouTube videos."
     },
 
-    "extensionversion": {
-        "message": "1.2.0"
-    },
-
     "buttonup": {
         "message": "UP"
     },
@@ -29,5 +25,22 @@
 
     "buttondebughide": {
         "message": "HIDE DEBUG"
+    },
+
+    
+    "debugtitle": {
+        "message": "Debug information"
+    },
+
+    "errortitle": {
+        "message": "Something went wrong"
+    },
+
+    "errordesc": {
+        "message": "It seems like something went wrong. Reload the website and try again, if this continues happening please hit us up on GitHub."
+    },
+
+    "errorsubtitle": {
+        "message": "Error information"
     }
 }
