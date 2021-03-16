@@ -22,7 +22,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    animation: scrolltxt 25s infinite linear;
+    animation: scrolltxt 10s infinite linear;
 }
 
 .ovflow:hover {
@@ -30,11 +30,14 @@
 }
 
 @keyframes scrolltxt {
-    50% {
-        transform: translateX(-60%);
+    40% {
+        transform: translateX(-10%);
     }
 
-    95% {
+    80% {
+        transform: translateX(10%);
+    }
+    90% {
         animation-direction: reverse;
     }
 }
