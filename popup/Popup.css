@@ -1,0 +1,40 @@
+#btn-container {
+    text-align: center;
+    z-index: 2;
+}
+
+.centered {
+    text-align: center;
+}
+
+.bkg {
+    width: 320px;
+    height: 180px;
+    z-index: 1;
+}
+
+.blur {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.ovflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    animation: scrolltxt 25s infinite linear;
+}
+
+.ovflow:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrolltxt {
+    50% {
+        transform: translateX(-60%);
+    }
+
+    95% {
+        animation-direction: reverse;
+    }
+}

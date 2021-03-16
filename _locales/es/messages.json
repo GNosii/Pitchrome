@@ -7,6 +7,10 @@
         "message": "Extensión que te permite cambiar facilmente el pitch de los videos en YouTube."
     },
 
+    "extensionversion": {
+        "message": "1.2.0"
+    },
+    
     "buttonup": {
         "message": "SUBIR"
     },

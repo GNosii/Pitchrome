@@ -28,7 +28,8 @@ function setupUI() {
             document.getElementById("btn-reset").textContent = chrome.i18n.getMessage("buttonreset");
 
             if (isYoutube) {
-                document.getElementById("yt-thumbnail").src = ytThumbnailBaseUrl.replace("$u", videoId);
+                document.getElementById("bkg-container").style.backgroundImage = "url('" + ytThumbnailBaseUrl.replace("$u", videoId); + "')";
+
                 document.getElementById("yt-title").textContent = videoTitle;
             }
         }

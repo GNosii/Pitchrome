@@ -7,6 +7,10 @@
         "message": "Extension allowing you to easily change the pitch in YouTube videos."
     },
 
+    "extensionversion": {
+        "message": "1.2.0"
+    },
+
     "buttonup": {
         "message": "UP"
     },
