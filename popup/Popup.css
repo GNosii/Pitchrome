@@ -13,6 +13,15 @@
     z-index: 1;
 }
 
+#error-msg-container {
+    resize: both;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-style: dashed;
+    border-color: black;
+    border-width: thin;
+}
+
 .blur {
     filter: blur(8px);
     -webkit-filter: blur(8px);

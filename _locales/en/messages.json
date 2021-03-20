@@ -42,5 +42,9 @@
 
     "errorsubtitle": {
         "message": "Error information"
+    },
+
+    "errornoyoutube": {
+        "message": "Pitchrome is not compatible with this website. Compatible websites: YouTube"
     }
 }
