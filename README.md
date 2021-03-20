@@ -9,6 +9,12 @@ Get the latest release from [here](https://github.com/GNosii/Pitchrome/releases/
 
 > ⚠️ If you're using Firefox or an browsed based on it. You're going to need `Pitchrome-Firefox.zip` instead of the normal release, this release includes an different manifest that allows the extension to run on Firefox. The codebase and localization are the same between both releases.
 
+## ⚠️ Notes
+- This is not going to work on YouTube Premieres or Livestreams.
+- The extension works by modifying the video tag and setting its `preservesPitch` and `playbackRate` values depending on the user's actions, which may allow for usage in another websites that also use the HTML5 `<video>` tag.
+- Setting the pitch way too high or too low may cause issues like the video losing all audio or the video not buffering.
+- **THE EXTENSION DOES NOT USE ANY "KEY-LOCKED" API!** The video's title is obtained by getting the YouTube tab's title, and running an RegExp replace on it, which removes the '- YouTube' and the notification counter '(COUNT)'. Example: "(6) Me at the zoo - YouTube" is changed to "Me at the zoo" in Pitchrome's popup. The video id is obtained by extracting the Id from the tab's url (using an RegExp) and using that Id to get an image directly from `img.youtube.com`.
+
 ## 🌎 Compatibility guide
 
 |Developer|Browser|Compatibility|💬|
@@ -18,7 +24,5 @@ Get the latest release from [here](https://github.com/GNosii/Pitchrome/releases/
 |Microsoft|Edge|✔️Tested|Completely compatible|
 |Mozilla|Firefox|✔️Tested|Compatible if using `Pitchrome-Firefox`|
 |Opera Software|Opera|❓Untested|Compatibility hasn't been tested|
-|Opera Software|Opera GX|❓Untested|Compatibility hasn't been tested|
 |Brave Software|Brave|❓Untested|Compatibility hasn't been tested|
 |Apple|Safari|❌Unsupported|Not supported currently|
-|Microsoft|Internet Explorer|❌Unsupported||
