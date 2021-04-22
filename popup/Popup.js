@@ -17,6 +17,8 @@ checkYoutube();
 listenToMouseClick();
 
 function setupUI(exception) {
+    document.querySelector('html').setAttribute('lang', chrome.i18n.getUILanguage());
+
     chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
         var videoId = (tab[0].url).replace('https://www.youtube.com/watch?v=', '').split('&')[0];
         var videoTitle = (tab[0].title).replace(ytTitleReplaceRegex, '').replace(' - YouTube', '');
@@ -28,7 +30,19 @@ function setupUI(exception) {
             
             if (isYoutube) {
                 document.getElementById('bkg-container').style.backgroundImage = 'url(' + ytThumbnailBaseUrl.replace('$u', videoId); + ')';
-                document.getElementById('yt-title').textContent = videoTitle;
+                document.getElementById('bkg-container').setAttribute('alt', chrome.i18n.getMessage('altthumbnail').replace('%s', videoTitle));
+
+                var title = document.getElementById('yt-title');
+
+                if (title == null) {
+                    showWarning(chrome.i18n.getMessage('warnnotfound'));
+                    
+                    document.getElementById('bkg-container').remove();
+                    document.getElementById('yt-info-container').remove();
+                } else {
+                    title.textContent = videoTitle;
+                    if (title.clientWidth < title.scrollWidth) title.className = 'centered ovflow';
+                }
             }
         } else {
             document.getElementById('main-container').style = 'display: none;';
@@ -55,11 +69,12 @@ function setupUI(exception) {
 
             document.getElementById('btn-debug').disabled = false
         }
+
         // Añadirle texto al botón para evitar el problema de que si no se ha
         // seleccionado una opción no se ve el texto
         document.getElementById('btn-debug').textContent = chrome.i18n.getMessage('buttondebugshow');
 
-        console.log('Locale and images ready!');
+        console.log('chrome.i18n.getMessage and images ready!');
     });
 }
 
@@ -82,7 +97,7 @@ function listenToMouseClick() {
     console.log('IsFirefox ' + isFirefox);
 
     function handleClickEvent(event) {
-        var clickedId = event.target.id 
+        var clickedId = event.target.id;  
 
         if (clickedId == 'btn-up' || clickedId == 'btn-down' || clickedId == 'btn-reset') {
             console.log('Clicked on ' + clickedId);
@@ -113,8 +128,7 @@ function listenToMouseClick() {
         function sendMessage(tab) {
             var filtered = (event.target.id).replace('btn-', '');
             chrome.tabs.sendMessage(tab[0].id, {action: filtered});
-
-            console.log('Sent message to background script: ' + filtered);
+            console.debug('Sent message to background script: ' + filtered);
         }
 
         console.debug('Received click event from ' + event.type);
@@ -128,9 +142,14 @@ function checkYoutube() {
             setupUI();
         } else {
             isYoutube = false;
-            reportException(new Error(chrome.i18n.getMessage("errornoyoutube")));
+            reportException(new Error(chrome.i18n.getMessage("errornoyoutube").replace('%s', 'YouTube')));
         }
     });
+}
+
+function showWarning(what) {
+    document.getElementById('warning-container').style = "";
+    document.getElementById('warn').textContent = what; 
 }
 
 function reportException(exception) {
