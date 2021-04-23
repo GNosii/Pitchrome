@@ -32,5 +32,6 @@
         "96": "/asset/mat_earbuds.svg"
     },
 
+    "content_security_policy": "script-src 'self' 'sha256-O6piNkhLv4BI/Oje+MccCmgUSrS1sIp+CMaOsvD/VWU=' https://cdnjs.cloudflare.com; object-src 'self'",    
     "permissions": ["activeTab"]
 }
