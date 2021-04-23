@@ -45,6 +45,14 @@
     },
 
     "errornoyoutube": {
-        "message": "Pitchrome is not compatible with this website. Compatible websites: YouTube"
+        "message": "Pitchrome is not compatible with this website. Compatible websites: %s"
+    }, 
+
+    "altthumbnail": {
+        "message": "Thumbnail for %s"
+    },
+
+    "warnnotfound": {
+        "message": "The video element was not detected by the background script, this will render pitch controls unusable. Please reload the website and try again."
     }
 }

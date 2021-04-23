@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "outDir": "./pitchbuild",
+        "resolveJsonModule": true,
+        "moduleResolution": "Node",
+        "removeComments": true,
+        "allowJs": true,
+        "target": "es6"
+    },
+
+    "include": ["popup/*", "background/*", "*.json"],
+    "exclude": ["jsconfig.json", "tsconfig.json", "package-lock.json", "package.json"]
+}

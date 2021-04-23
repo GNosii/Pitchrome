@@ -44,6 +44,14 @@
     },
 
     "errornoyoutube": {
-        "message": "Pitchrome no es compatible con este sitio web. Páginas compatibles: YouTube"
+        "message": "Pitchrome no es compatible con este sitio web. Páginas compatibles: %s"
+    },
+
+    "altthumbnail": {
+        "message": "Imagen de %s"
+    },
+
+    "warnnotfound": {
+        "message": "El elemento de video no fue encontrado por el script de fondo, esto previene que los controles de sonido funcionen. Recarga la página e intenta nuevamente."
     }
 }
