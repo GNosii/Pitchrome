@@ -1,0 +1,30 @@
+{
+  "name": "pitchrome",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/github/languages/code-size/gnosii/pitchrome?label=code%20size&style=flat-square)\r ![](https://img.shields.io/github/languages/top/gnosii/pitchrome?style=flat-square)",
+  "main": "index.js",
+  "devDependencies": {
+    "shelljs": "^0.8.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "_buildInternal_CopyHtml": "echo Copying HTML files && ts-node builder/html.ts",
+    "_buildInternal_CopyAssets": "echo Copying assets and lang files && ts-node builder/assets.ts",
+    "_buildInternal_CompileTypeScript": "echo Starting TypeScript compilation && tsc",
+    "build": "echo **** STARTING PITCHBUILD **** && npm run _buildInternal_CompileTypeScript && npm run _buildInternal_CopyHtml && npm run _buildInternal_CopyAssets && echo **** COMPLETED! You may find Pitchrome at '/pitchbuild/' ****"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GNosii/Pitchrome.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GNosii/Pitchrome/issues"
+  },
+  "homepage": "https://github.com/GNosii/Pitchrome#readme",
+  "dependencies": {
+    "@types/chrome": "0.0.135"
+  }
+}

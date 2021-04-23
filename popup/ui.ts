@@ -7,6 +7,4 @@ function setup() {
     console.log('somehow works wtf');
 }
 
-() => setup();
-
 enum ActiveWebsite {"YOUTUBE", "HTML"}
