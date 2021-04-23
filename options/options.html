@@ -1,0 +1,39 @@
+<!-- 
+options.html:1 Refused to load the script 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js' because it violates the following Content Security Policy directive: "script-src 'self'". 
+Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback.
+
+options.html:14 Refused to execute inline script because it violates the following Content Security Policy directive: "script-src 'self'". 
+Either the 'unsafe-inline' keyword, a hash ('sha256-O6piNkhLv4BI/Oje+MccCmgUSrS1sIp+CMaOsvD/VWU='), or a nonce ('nonce-...') is required to enable inline execution.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+
+        <script src="optui.js"></script>
+        
+        <link rel="stylesheet" href="../asset/common.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@500;800&display=swap">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+    <body>
+        <h1>Depuración: Configuración de Pitchrome</h1>
+        CSS Personalizado
+        <div class="code-container">
+            <pre>
+                <code class="language-css">Codigo aqui</code>
+            </pre>
+        </div>
+        Créditos
+        <ul>
+            <li>highlight.js: Marcado del editor de CSS</li>
+            <li>Fira Code: Fuente del editor de CSS</li>
+            <li>Inter: Fuente general</li>
+        </ul>
+    </body>
+</html>

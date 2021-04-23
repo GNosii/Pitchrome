@@ -13,6 +13,11 @@
         }
     ],
 
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": false
+    },
+
     "action": {
         "default_popup": "popup/Popup.html",
         "default_title": "Pitchrome",
