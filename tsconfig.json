@@ -8,6 +8,6 @@
         "target": "es6"
     },
 
-    "include": ["popup/*", "background/*", "options/*", "third_party/*", "*.json"],
+    "include": ["popup/*", "background/*", "options/*", "/*.ts", "*.json"],
     "exclude": ["jsconfig.json", "tsconfig.json", "package-lock.json", "package.json"]
 }

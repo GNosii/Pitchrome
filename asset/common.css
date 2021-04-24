@@ -2,10 +2,21 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+h1, .centered {
+    text-align: center;
+}
+
 .code-container {
     resize: both;
+    white-space: pre;
     size: 100% 100%;
     font-family: 'Fira Code', monospace;
+}
+
+.bkg {
+    width: 320px;
+    height: 180px;
+    z-index: 1;
 }
 
 /* Interfaz antigua
@@ -18,11 +29,6 @@ body {
     text-align: center;
 }
 
-.bkg, .container {
-    width: 320px;
-    height: 180px;
-    z-index: 1;
-}
 
 #error-msg-container {
     resize: both;
