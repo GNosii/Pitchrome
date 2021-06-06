@@ -1,8 +1,13 @@
+![Not Maintained](https://img.shields.io/badge/Maintenance%20Level-Abandoned-orange.svg)<br>
 # Pitchrome 
 
 ![](https://img.shields.io/github/languages/code-size/gnosii/pitchrome?label=code%20size&style=flat-square)
 ![](https://img.shields.io/github/languages/top/gnosii/pitchrome?style=flat-square)
 
+This is not going to be maintained anymore, most (if not all functionality of Pitchrome can be obtained by:
+- Opening the developer console and writing  `document.querySelector("video").preservesPitch = false`, then changing the speed through the YouTube player.
+- Or changing the speed using `document.querySelector("video").playbackRate =  1 (change to speed you want)`.
+ 
 ## 💻 How to Install 
 
 Get the latest release from [here](https://github.com/GNosii/Pitchrome/releases/latest/)
